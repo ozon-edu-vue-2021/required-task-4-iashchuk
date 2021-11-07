@@ -1,210 +1,103 @@
 import { getErrorMessages } from "./validators";
 
-const validateSurname = (field) => {
-  const errors = {
+const isFieldDirty = (field) => field.$dirty;
+
+const validate = (field, errors) =>
+  isFieldDirty(field) ? getErrorMessages(errors) : [];
+
+const validateSurname = (field) =>
+  validate(field, {
     required: !field.required,
     alphaRus: !field.alphaRus,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateSurnameOld = (field) => {
-  const errors = {
+const validateSurnameOld = (field) =>
+  validate(field, {
     required: !field.required,
     alphaRus: !field.alphaRus,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateSurnameLatin = (field) => {
-  const errors = {
+const validateSurnameLatin = (field) =>
+  validate(field, {
     required: !field.required,
     alpha: !field.alpha,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateName = (field) => {
-  const errors = {
+const validateName = (field) =>
+  validate(field, {
     required: !field.required,
     alphaRus: !field.alphaRus,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateNameOld = (field) => {
-  const errors = {
+const validateNameOld = (field) =>
+  validate(field, {
     required: !field.required,
     alphaRus: !field.alphaRus,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateNameLatin = (field) => {
-  const errors = {
+const validateNameLatin = (field) =>
+  validate(field, {
     required: !field.required,
     alpha: !field.alpha,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePatronymic = (field) => {
-  const errors = {
+const validatePatronymic = (field) =>
+  validate(field, {
     required: !field.required,
     alphaRus: !field.alphaRus,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateEmail = (field) => {
-  const errors = {
+const validateEmail = (field) =>
+  validate(field, {
     required: !field.required,
     email: !field.email,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateBirthdate = (field) => {
-  const errors = {
+const validateBirthdate = (field) =>
+  validate(field, {
     required: !field.required,
     dateIsNotInFuture: !field.dateIsNotInFuture,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validateCitizenship = (field) => {
-  const errors = {
+const validateCitizenship = (field) =>
+  validate(field, {
     required: !field.required,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePassportSeries = (field) => {
-  const errors = {
+const validatePassportSeries = (field) =>
+  validate(field, {
     required: !field.required,
     numeric: !field.numeric,
     passportSeriesLength: !field.passportSeriesLength,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePassportNumber = (field) => {
-  const errors = {
+const validatePassportNumber = (field) =>
+  validate(field, {
     required: !field.required,
     numeric: !field.numeric,
     passportNumberLength: !field.passportNumberLength,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePassportNumberInternational = (field) => {
-  const errors = {
+const validatePassportNumberInternational = (field) =>
+  validate(field, {
     required: !field.required,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePassportDate = (field) => {
-  const errors = {
+const validatePassportDate = (field) =>
+  validate(field, {
     required: !field.required,
     dateIsNotInFuture: !field.dateIsNotInFuture,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePassportCountry = (field) => {
-  const errors = {
+const validatePassportCountry = (field) =>
+  validate(field, {
     required: !field.required,
-  };
+  });
 
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
-
-const validatePassportType = (field) => {
-  const errors = {
+const validatePassportType = (field) =>
+  validate(field, {
     required: !field.required,
-  };
-
-  if (!field.$dirty) {
-    return [];
-  }
-
-  return getErrorMessages(errors);
-};
+  });
 
 export const schema = {
   validateSurname,
