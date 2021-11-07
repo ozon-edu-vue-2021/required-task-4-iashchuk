@@ -48,6 +48,7 @@
             v-model="email"
             type="email"
             :error-messages="errors.email"
+            messages="Например, info@site.com"
             outlined
           />
         </v-col>
@@ -103,16 +104,20 @@
         <v-col cols="12" md="4">
           <v-text-field
             label="Серия паспорта"
+            v-mask="'####'"
             v-model="passportSeries"
             :error-messages="errors.passportSeries"
+            messages="Например, 4607"
             outlined
           />
         </v-col>
         <v-col cols="12" md="4">
           <v-text-field
             label="Номер паспорта"
+            v-mask="'######'"
             v-model="passportNumber"
             :error-messages="errors.passportNumber"
+            messages="Например, 672365"
             outlined
           />
         </v-col>
@@ -132,18 +137,18 @@
             <v-text-field
               label="Фамилия на латинице"
               v-model="surnameLatin"
-              outlined
               :error-messages="errors.surnameLatin"
               messages="Заполнять латинскими буквами. Например, Petrov"
+              outlined
             />
           </v-col>
           <v-col cols="12" md="6">
             <v-text-field
               label="Имя на латинице"
-              v-model="nameLatin"
-              outlined
               :error-messages="errors.nameLatin"
               messages="Заполнять латинскими буквами. Например, Sergey"
+              v-model="nameLatin"
+              outlined
             />
           </v-col>
         </v-row>
@@ -153,6 +158,7 @@
               label="Номер паспорта"
               v-model="passportNumberInternational"
               :error-messages="errors.passportNumberInternational"
+              messages="Серия и номер"
               outlined
             />
           </v-col>
@@ -226,6 +232,7 @@
 
 <script>
 import { validationMixin } from "vuelidate";
+import { VueMaskDirective } from "v-mask";
 
 import { fetchCitizenships, fetchPassportTypes } from "../services";
 import { validators, schema } from "../utils/validate";
@@ -250,6 +257,9 @@ const {
 
 export default {
   mixins: [validationMixin],
+  directives: {
+    mask: VueMaskDirective,
+  },
   validations() {
     const schema = {
       surname: { required, alphaRus },

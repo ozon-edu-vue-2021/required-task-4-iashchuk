@@ -32,7 +32,7 @@ const errorMessages = {
   email: "Неправильный формат электронной почты",
   dateIsNotInFuture: "Дата не должна быть больше текущей",
   passportSeriesLength: "Длина должна быть 4 цифры",
-  passportNumberLength: "Длина должна быть 6 цифры",
+  passportNumberLength: "Длина должна быть 6 цифр",
 };
 
 export const getErrorMessages = (errors) => {
