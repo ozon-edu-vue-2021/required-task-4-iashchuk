@@ -35,11 +35,7 @@ const errorMessages = {
   passportNumberLength: "Длина должна быть 6 цифры",
 };
 
-export const getErrorMessages = ({ errors, dirty }) => {
-  if (!dirty) {
-    return [];
-  }
-
+export const getErrorMessages = (errors) => {
   return Object.entries(errors).reduce((acc, [key, value]) => {
     if (value) {
       const message = errorMessages[key] || "Неправильно заполнено поле";

@@ -6,7 +6,11 @@ const validateSurname = (field) => {
     alphaRus: !field.alphaRus,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateSurnameOld = (field) => {
@@ -15,7 +19,11 @@ const validateSurnameOld = (field) => {
     alphaRus: !field.alphaRus,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateSurnameLatin = (field) => {
@@ -24,7 +32,11 @@ const validateSurnameLatin = (field) => {
     alpha: !field.alpha,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateName = (field) => {
@@ -33,7 +45,11 @@ const validateName = (field) => {
     alphaRus: !field.alphaRus,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateNameOld = (field) => {
@@ -42,7 +58,11 @@ const validateNameOld = (field) => {
     alphaRus: !field.alphaRus,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateNameLatin = (field) => {
@@ -51,7 +71,11 @@ const validateNameLatin = (field) => {
     alpha: !field.alpha,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePatronymic = (field) => {
@@ -60,7 +84,11 @@ const validatePatronymic = (field) => {
     alphaRus: !field.alphaRus,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateEmail = (field) => {
@@ -69,7 +97,11 @@ const validateEmail = (field) => {
     email: !field.email,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateBirthdate = (field) => {
@@ -78,7 +110,11 @@ const validateBirthdate = (field) => {
     dateIsNotInFuture: !field.dateIsNotInFuture,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validateCitizenship = (field) => {
@@ -86,7 +122,11 @@ const validateCitizenship = (field) => {
     required: !field.required,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePassportSeries = (field) => {
@@ -96,7 +136,11 @@ const validatePassportSeries = (field) => {
     passportSeriesLength: !field.passportSeriesLength,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePassportNumber = (field) => {
@@ -106,7 +150,11 @@ const validatePassportNumber = (field) => {
     passportNumberLength: !field.passportNumberLength,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePassportNumberInternational = (field) => {
@@ -114,10 +162,11 @@ const validatePassportNumberInternational = (field) => {
     required: !field.required,
   };
 
-  return getErrorMessages({
-    errors,
-    dirty: field.$dirty,
-  });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePassportDate = (field) => {
@@ -126,7 +175,11 @@ const validatePassportDate = (field) => {
     dateIsNotInFuture: !field.dateIsNotInFuture,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePassportCountry = (field) => {
@@ -134,10 +187,11 @@ const validatePassportCountry = (field) => {
     required: !field.required,
   };
 
-  return getErrorMessages({
-    errors,
-    dirty: field.$dirty,
-  });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 const validatePassportType = (field) => {
@@ -145,7 +199,11 @@ const validatePassportType = (field) => {
     required: !field.required,
   };
 
-  return getErrorMessages({ errors, dirty: field.$dirty });
+  if (!field.$dirty) {
+    return [];
+  }
+
+  return getErrorMessages(errors);
 };
 
 export const schema = {
