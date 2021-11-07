@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <Form />
+    <v-app>
+      <v-main>
+        <notifications group="foo" />
+        <Form />
+      </v-main>
+    </v-app>
   </div>
 </template>
 
@@ -22,12 +27,6 @@ export default {
   background-color: #fafafa;
   padding: 24px;
   box-sizing: border-box;
-}
-
-html,
-body,
-#app {
-  height: 100%;
 }
 
 * {
